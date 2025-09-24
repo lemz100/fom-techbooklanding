@@ -65,14 +65,26 @@ Use this section to recap over some of your major learnings while working throug
 
 To see how you can add code snippets, see below:
 
-```html
-<h1>Some HTML code I'm proud of</h1>
-```
-```css
-.proud-of-this-css {
-  color: papayawhip;
+
+```less
+span {
+    position: relative;
+    z-index: 1;
+}
+span::before {
+    content: "";
+    position: absolute;
+    background: url(./assets/images/pattern-circle.png) no-repeat;
+    background-size: 100% 100%;
+    width: 6.75rem;
+    height: 2.875rem;
+    left: -15%;
 }
 ```
+* Positioned orange circle with full size, using ::before to place it behind the text, and flipped its intrinsic width & height to size it on the screen. 
+* Took inspiration from:  https://mzdemir-tech-book-club-landing-page.netlify.app/.
+
+
 ```js
 const proudOfThisFunc = () => {
   console.log('🎉')
