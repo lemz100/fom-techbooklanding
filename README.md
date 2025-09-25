@@ -25,7 +25,7 @@ Users should be able to:
 
 ### Links
 
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Live Site URL: [https://jade-panda-45b7ca.netlify.app/](https://jade-panda-45b7ca.netlify.app/)
 
 ## My process
 
@@ -81,6 +81,25 @@ span::before {
   }
 ```
 * Calculated the % of the positions using the Figma orange lines and the size of the container in Figma to get the percentages for positioning the tech-logos.
+
+```less
+footer {
+    padding-inline: 2rem;
+    padding-top: 4rem;
+    .content {
+        .heading {
+            .tp2();
+        }
+    }
+    .ftr-content {
+        align-self: stretch;
+        flex-direction: row;
+        margin-inline: -2rem;
+        justify-content: space-between;
+    }
+}
+```
+* Negative margin-inline to ignore the footer's padding inline and span the whole thing. 
 
 ### Continued development
 

@@ -31,7 +31,7 @@ picture {
     justify-content: center;
     img {
         display: block;
-        max-inline-size: 100%;
+        max-inline-size: 100%; 
     }
 }
 
@@ -177,6 +177,22 @@ button.alternate {
     background: transparent;
     border: 2px solid @neutral0;
 }
+button:hover, button:focus, button:active {
+    cursor: pointer;
+    background: @grad;
+}
+button:focus, button:active {
+    box-shadow: 0 0 0 3px white,
+      0 0 0 5px @neutral700;
+}
+button.alternate:hover, button.alternate:focus, button.alternative:active {
+    background: linear-gradient(90deg, @neutral700 0%, @neutral900 100%);
+}
+button.alternate:focus, button.alternate:active {
+    box-shadow: 0 0 0 3px @neutral900,
+      0 0 0 5px @neutral200;
+}
+
 
 /** Main styling */
 
@@ -249,6 +265,7 @@ main {
         flex-direction: column;
         gap: 1.5rem;
         .heading {
+            color: @neutral900;
             text-align: left;
             .tp2m();
         }
@@ -369,6 +386,9 @@ main {
             .desc {
                 .tp6m();
                 color: @neutral900;
+            }
+            .arrow {
+                display: none;
             }
         }
     }
@@ -518,6 +538,11 @@ footer {
                     }
                 }
             }
+            button {
+                svg {
+                    transform: rotate(180deg);
+                }
+            }
         }
     }
     .ftr-content {
@@ -541,8 +566,14 @@ footer {
 }
 
 @media screen and (min-width: 768px) {
+    picture {
+        max-inline-size: 70%;
+    }
     button {
         .tp6();
+    }
+    main {
+        gap: 5rem;
     }
     .container1 {
         position: relative;
@@ -580,6 +611,7 @@ footer {
         padding-inline: 1.5rem;
         .text {
             gap: 2.125rem;
+            align-items: center;
             .heading {
                 .tp2();
                 max-width: 16ch;
@@ -606,7 +638,7 @@ footer {
             position: absolute;
             z-index: 1;
             display: block;
-            left: 70%;
+            left: 76%;
             top: 80%;
         }
     }
@@ -630,10 +662,14 @@ footer {
     .membership-container {
         padding-inline: 2rem;
         gap: 2.5rem;
+        align-self: center;
+        justify-content: center;
         .title {
             .tp2();
+            align-self: center;
         }
         .options-container {
+            align-items: center;
             flex-flow: row wrap;
             .option {
                 width: 340px;
@@ -661,6 +697,112 @@ footer {
             flex-direction: row;
             margin-inline: -2rem;
             justify-content: space-between;
+        }
+    }
+}
+
+@media screen and (min-width: 1440px) {
+    main {
+        gap: 7.5rem;
+    }
+    picture {
+        max-inline-size: 560px;
+    }
+    .container1 {
+        padding-inline: 8.4375rem;
+        gap: 5rem;
+        .wrapper {
+            flex-direction: row;
+            align-items: center;
+            .content {
+                gap: 2rem;
+            }
+        }
+    }
+    .container2 {
+        flex-direction: row;
+        padding: 0;
+        margin-inline: 8.4375rem;
+        justify-content: center;
+        align-items: center;
+        gap: 5rem;
+        .text {
+            order: 1;
+        }
+        picture {
+            img {
+                border-radius: 20px;
+            }
+        }
+    }
+    .container3 {
+        flex-direction: row;
+        gap: 5rem;
+        padding: 0;
+        margin-inline: 8.4375rem;
+        align-items: center;
+        justify-content: center;
+        .text {
+            align-items: center;
+        }
+        .tech-logos {
+            left: 49%;
+            top: 68%;
+        }
+    }
+    .reading-container {
+        padding: 5rem 0;
+        gap: 4rem;
+        align-items: center;
+        .steps {
+            flex-direction: row;
+            margin-inline: 60px;
+            gap: 3rem;
+            .step {
+                .desc {
+                    max-width: 18ch;
+                }
+                .top {
+                    display: flex;
+                    align-items: center;
+                    flex-direction: row;
+                    justify-content: space-between;
+                    .arrow {
+                        margin-right: 0.5px;
+                        margin-top: 0.5px;
+                        display: block;
+                    }
+                }
+            }
+        }
+    }
+    .membership-container {
+        padding: 0;
+        gap: 4rem;
+    }
+    .testimonial-container {
+        align-items: center;
+        padding: 0;
+        margin-inline: 14.6785rem;
+        .content {
+            .text {
+                text-align: center;
+            }
+            .author {
+                text-align: center;
+            }
+        }
+    }
+    footer {
+        padding-inline: 8.4375rem;
+        padding-top: 5rem;
+        .content {
+            .heading {
+                max-width: 18ch;
+            }
+        }
+        .ftr-content {
+            margin: 0;
         }
     }
 }
