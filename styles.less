@@ -165,6 +165,8 @@ button {
     gap: 1rem;
     display: flex;
     justify-content: center;
+    color: @neutral900;
+    text-transform: uppercase;
     text-align: center;
     align-items: center;
     .tp6m();
@@ -227,13 +229,6 @@ main {
                 flex-direction: column;
                 align-items: flex-start;
                 gap: 1.25rem;
-                .membership-btn {
-                    p {
-                        .tp6m();
-                        color: @neutral900;
-                        text-transform: uppercase;
-                    }
-                }
             }
         }
         picture {
@@ -324,6 +319,9 @@ main {
             border-radius: 12px;
         }
     }
+    .tech-logos {
+        display: none;
+    }
 }
 
 .reading-container {
@@ -395,6 +393,7 @@ main {
         gap: 1.5rem;
         .option {
             border: 1px solid @neutral100;
+            border-radius: 8px;
             display: flex;
             flex-direction: column;
             gap: 2rem;
@@ -450,19 +449,11 @@ main {
                     }
                 }
             }
-            button {
-                text-transform: uppercase;
-                background-color: @lightsalmon50;
-                border: 2px solid @neutral900;
-                padding: 1.5rem 1.25rem;
-                gap: 1rem;
-                display: flex;
-                justify-content: center;
-                text-align: center;
-                align-items: center;
-                .tp6m();
-                border-radius: 8px;
-            }
+        }
+        .option.pro {
+            background-color: @neutral100;
+            background-image: url(./assets/images/pattern-glow.svg), url(./assets/images/pattern-light-bg.svg);
+            background-size: auto, cover;
         }
     }
 }
@@ -550,29 +541,126 @@ footer {
 }
 
 @media screen and (min-width: 768px) {
+    button {
+        .tp6();
+    }
     .container1 {
-        background-image: url(./assets/images/pattern-glow.svg), url(./assets/images/pattern-light-bg.svg);
+        position: relative;
+        .bg-lyr {
+            position: absolute;
+            z-index: 0;
+            inset: 0;
+            background-image: url(./assets/images/pattern-glow.svg);
+            background-repeat: no-repeat;
+            background-position: bottom -600px right -400px;
+            background-size: 100% 100%;
+        }
+        background-image: url(./assets/images/pattern-light-bg.svg);
         padding: 2rem;
+        gap: 4rem;
         padding-bottom: 5rem;
+        .wrapper {
+            position: relative;
+            z-index: 1;
+            .content {
+                .text {
+                    .title {
+                        max-width: 16ch;
+                        .tp1();
+                    }
+                }
+                .cta {
+                    align-self: flex-start;
+                }
+            }
+            
+        }
     }
     .container2 {
         padding-inline: 1.5rem;
+        .text {
+            gap: 2.125rem;
+            .heading {
+                .tp2();
+                max-width: 16ch;
+            }
+            .features {
+                gap: 1.5rem;
+            }
+        }
     }
     .container3 {
+        position: relative;
         padding-inline: 1.5rem;
+        .text {
+            .header {
+                .tp2();
+                span::before {
+                    width: 9.875rem;
+                    height: 4.25rem;
+                    left: -15%;
+                }
+            }
+        }
+        .tech-logos {
+            position: absolute;
+            z-index: 1;
+            display: block;
+            left: 70%;
+            top: 80%;
+        }
     }
     .reading-container {
         margin-inline: 2rem;
-        padding: 2rem 5rem;
+        padding: 5rem 2rem;
+        gap: 3rem;
+        .title {
+            .tp2();
+        }
+        .steps {
+            gap: 2.5rem;
+            .step {
+                gap: 1.5rem;
+                .desc {
+                    .tp6();
+                }
+            }
+        }
     }
     .membership-container {
         padding-inline: 2rem;
+        gap: 2.5rem;
+        .title {
+            .tp2();
+        }
+        .options-container {
+            flex-flow: row wrap;
+            .option {
+                width: 340px;
+            }
+        }
     }
     .testimonial-container {
         padding-inline: 2rem;
+        .content {
+            .text {
+                .tp3();
+            }
+        }
     }
     footer {
         padding-inline: 2rem;
         padding-top: 4rem;
+        .content {
+            .heading {
+                .tp2();
+            }
+        }
+        .ftr-content {
+            align-self: stretch;
+            flex-direction: row;
+            margin-inline: -2rem;
+            justify-content: space-between;
+        }
     }
 }

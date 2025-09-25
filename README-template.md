@@ -84,6 +84,30 @@ span::before {
 * Positioned orange circle with full size, using ::before to place it behind the text, and flipped its intrinsic width & height to size it on the screen. 
 * Took inspiration from:  https://mzdemir-tech-book-club-landing-page.netlify.app/.
 
+```less
+  .container3 {
+      position: relative;
+      padding-inline: 1.5rem;
+      .text {
+          .header {
+              .tp2();
+              span::before {
+                  width: 9.875rem;
+                  height: 4.25rem;
+                  left: -15%;
+              }
+          }
+      }
+      .tech-logos {
+          position: absolute;
+          z-index: 1;
+          display: block;
+          left: 70%;
+          top: 80%;
+      }
+  }
+```
+* Calculated the % of the positions using the Figma orange lines and the size of the container in Figma to get the percentages for positioning the tech-logos.
 
 ```js
 const proudOfThisFunc = () => {
